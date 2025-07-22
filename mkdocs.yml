@@ -1,43 +1,91 @@
-site_name: Xiao's Group
+site_name: THU Xiaogroup Wiki
 site_url: https://sitename.example
+repo_name: xiaohaigroup/xiaohaigroup.github.io
+repo_url: https://github.com/xiaohaigroup/xiaohaigroup.github.io
+
+extra:
+  social:
+    - icon: material/web
+      link: https://sitename.example
+      name: 课题组网站
+    - icon: fontawesome/brands/github
+      link: https://github.com/xiaohaigroup
+      name: 课题组Github
+    - icon: fontawesome/solid/paper-plane
+      link: haixiao@tsinghua.edu.cn
+      name: 联系肖海老师
+  alternate:
+    - name: 中文
+      link: /
+      lang: zh
+    - name: English
+      link: /en/
+      lang: en
+  author_name: '{{ page.meta.authors }}'
+
+
 theme:
   name: material
   font:
     text: Merriweather Sans
     code: Red Hat Mono
   icon:
-    logo: fontawesome/solid/x
+    logo: fontawesome/solid/graduation-cap
+    repo: fontawesome/brands/github
   # logo: images/logo.png
   # favicon: images/favicon.png
-  features:
-    - navigation.footer
   palette:
-    # Dark Mode 
+    # Dark Mode
     - scheme: slate
-      toggle: 
+      toggle:
         icon: material/weather-sunny
-        primary: green
-      accent: deep purple  # hight the clickable 
-
+        name: Dark mode
+      primary: green
+      accent: deep purple
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
-        name: light mode
+        name: Light mode
       primary: blue
       accent: deep orange
+  favicon: images/favicon.png
 
-
+  language: en
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.tooltips
+    - search.suggest
+    - content.code.annotate
 
 markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
   - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+  - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
@@ -46,14 +94,25 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
-
-extra:
-  social:
-    - icon: simple/github
-      link: https://github.com/xiaohaigroup/xiaohaigrouo.github.io
+extra_javascript:
+  - javascripts/analytic.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - css/avatar.css
 
 copyright: Copyright &copy; 2025 Yue Yin; Hai Xiao
+
+
+nav:
+  - Home: index.md
+  - Test:
+      - How to add a page: how-to-add-a-page.md
+      - Admonitions: admonitions.md
+      - Code-examples: code-examples.md
+      - Content-tabs: content-tabs.md
+      - Diagram-examples: diagram-examples.md
