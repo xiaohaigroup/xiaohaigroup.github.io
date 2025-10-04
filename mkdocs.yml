@@ -104,15 +104,18 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
   - css/avatar.css
+  - css/extra.css
 
-copyright: Copyright &copy; 2025 Yue Yin; Hai Xiao
+copyright: "Copyright © 2025 Yue Yin; Hai Xiao"
 
 
 nav:
   - Home: index.md
-  - Test:
+  - WIKI:
       - How to add a page: how-to-add-a-page.md
       - Admonitions: admonitions.md
       - Code-examples: code-examples.md
       - Content-tabs: content-tabs.md
       - Diagram-examples: diagram-examples.md
+  - Issues:
+      - Windows User Variable: issues/windows_user_variables.md
